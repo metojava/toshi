@@ -1,0 +1,93 @@
+create database shop;
+use shop;
+
+
+CREATE TABLE  products (
+  id int(5) NOT NULL auto_increment,
+  name varchar(40) ,
+  descr varchar(55) ,
+  price float,
+  picture varchar(40),
+  PRIMARY KEY  (id)
+) ;
+
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'tosh','old but working toshiba laptop',400,'images/img1.jpg');INSERT INTO products (id, name, descr, price, picture) VALUES(null,'toshi','old but working toshiba laptop',402,'images/img2.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'toshba','once again old but working toshiba laptop',404,'images/img3.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'toshiva','one more time working toshiba laptop',405,'images/img4.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'toshbaba','old but working toshiba laptop',417,'images/img5.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'samsung','old and somehow working mobile cell phone',400,'images/img6.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'samsunmb','somehow working mobile cell phone',400,'images/img7.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'proscantv','tili vision',254,'images/img8.jpg');
+
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'nice house','house in highland',2400,'images/homes/1.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'chicago illinois','one of buildings you see',3400,'images/homes/2.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'nice Image','home design plan',4400,'images/homes/3.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'high building','appartment for sale ,manhattan',5400,'images/homes/4.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'charles bridge','nice sight from that house',6400,'images/homes/5.jpg');
+INSERT INTO products (id, name, descr, price, picture) VALUES(null,'cheeply as never','house in highland',7400,'images/homes/6.jpg');
+
+
+
+
+
+
+CREATE TABLE customers (
+uid int(11) NOT NULL auto_increment,
+fname varchar(20) NOT NULL,
+lname varchar(20) NOT NULL,
+pass char(30) NOT NULL,
+address varchar(50) NOT NULL,
+PRIMARY KEY (uid)
+
+); 
+alter table customers add column phone int(15);
+alter table customers modify phone varchar(20);
+insert into customers values(1,'mamuka','arabuli','secret','1750 ne 191 st miami','355-393-4705');
+insert into customers values(2,'mamuka','arabuli','secret','1750 ne 191 st miami','355-393-4705');
+
+
+
+CREATE TABLE orders(
+         id INT NOT NULL  AUTO_INCREMENT,
+         cid INT NOT NULL,       
+         order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(id),
+         FOREIGN KEY (cid) REFERENCES customers(uid)
+        );
+
+
+INSERT INTO orders VALUES  
+(1, 1, 22/12/2012),  
+(2, 1, 04/01/2012),  
+(3, 2, 22/12/2012),  
+(4, 2, 04/01/2012);  
+
+
+update orders set order_date='2012-12-22' where orders.cid=1 and orders.id=1;
+update orders set order_date='2012-01-04' where orders.cid=1 and orders.id=2;
+update orders set order_date='2012-12-22' where orders.cid=2 and orders.id=3;
+update orders set order_date='2012-01-04' where orders.cid=2 and orders.id=4;
+
+
+CREATE TABLE IF NOT EXISTS orderprod (
+oid int(11) NOT NULL,
+cid int(11) NOT NULL,
+pid int(11) NOT NULL,
+quantity int(11) NOT NULL,
+foreign key(cid)references customers(uid),
+foreign key(oid)references orders(id),
+foreign key(pid)references products(id)
+) ;
+
+insert into orderprod values(1,1,1,2);
+insert into orderprod values(1,1,2,1);
+insert into orderprod values(1,1,3,4);
+
+insert into orderprod values(1,1,4,3);
+insert into orderprod values(1,1,5,1);
+insert into orderprod values(1,1,2,1);
+
+insert into orderprod values(2,1,2,3);
+insert into orderprod values(3,2,3,2);
+insert into orderprod values(4,2,4,1);
+

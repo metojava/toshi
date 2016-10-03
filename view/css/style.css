@@ -1,0 +1,146 @@
+body
+{
+margin: 0;
+padding: 0; 
+font-size: 90%;
+font-family: georgia, times, "times new roman", serif; 
+background: -webkit-linear-gradient(#009999, white); /* For Safari */
+background: -o-linear-gradient(#009999, white); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#009999, white); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#009999, white); /* Standard syntax */
+background-repeat:no-repeat;
+}
+
+#main
+{
+margin:0 auto;
+width:990px;
+
+}
+
+#head
+{
+
+height:110px;
+padding-top:5px;
+background: -webkit-linear-gradient(#000066, white); /* For Safari */
+background: -o-linear-gradient(#000066, white); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#000066, white); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#000066, white); /* Standard syntax */
+border-bottom-left-radius:12px;
+border-bottom-right-radius:12px;
+}
+
+
+
+
+ h1,h2,h3,h4,h5
+{
+font-family:Times,times-roman,Georgia,Verdana;
+
+}
+
+ h1
+{
+float:left;
+position:relative;
+color:#aabbcc;
+
+}
+
+
+
+a:link
+{
+color: #036;
+}
+
+a:visited
+{
+color: #066;
+}
+
+a:hover ,a:active
+{
+color: #fff;
+background-color: #036;
+} 
+
+#head img
+{
+
+float:left;
+
+}
+
+
+#nav
+{
+top:10px;
+float:left;
+width:120px;
+margin-right:5px;
+}
+
+#nav ul
+{
+list-style-type: none; 
+margin: 0;
+padding: 0; 
+}
+
+#nav ul li
+{
+ display: block;  
+    -moz-box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+    -webkit-box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+    box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+
+}
+
+#nav ul li a
+{
+margin-top:10px;
+display:block;
+text-transform: uppercase;
+font:bold;
+text-decoration:none;
+text-shadow: 0 1px 0 #222;
+}
+
+#cont
+{
+float:left;
+width:965px;
+background: -webkit-linear-gradient(#3366FF, white); /* For Safari */
+background: -o-linear-gradient(#3366FF, white); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#3366FF, white); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#3366FF, white); /* Standard syntax */
+
+border-radius:10px;
+top:0px;
+}
+
+#conta
+{
+float:left;
+width:100%;
+background: -webkit-linear-gradient(#3366FF, white); /* For Safari */
+background: -o-linear-gradient(#3366FF, white); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#3366FF, white); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#3366FF, white); /* Standard syntax */
+
+top:0px;
+}
+
+#footer
+{
+clear:both;
+margin-top:20px;
+border-top:1px #1234;
+bottom:0;
+height:30px;
+  
+   
+
+}
